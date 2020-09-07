@@ -17,7 +17,6 @@ import javax.validation.Valid;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.Resources;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -67,9 +66,8 @@ class CarController {
          * TODO: Use the `assembler` on that car and return the resulting output.
          *   Update the first line as part of the above implementing.
          */
-        System.out.println("inside get cars "+id);
         Car car = carService.findById(id);
-        return assembler.toResource(car);
+        return assembler.toResource(new Car());
     }
 
     /**

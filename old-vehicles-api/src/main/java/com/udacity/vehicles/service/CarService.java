@@ -49,7 +49,7 @@ public class CarService {
         {
             return true;
         }
-        return false;
+    return false;
     }
 
 
@@ -67,7 +67,6 @@ public class CarService {
          */
         //Car car = new Car();
         Optional<Car> op_car = repository.findById(id);
-        System.out.println("FindcarbyID "+op_car.isPresent());
         if (!op_car.isPresent())
         {
             throw new CarNotFoundException("Car not Found");
